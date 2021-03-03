@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatever</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function getNum() {
+            return (Math.random() * 8);
+        }
+
+        function setBackground() {
+            var x = getNum();
+            for (var i = 0; i < 9; i++) {
+                document.getElementsByTagName("td")[i].style.backgroundColor = 'white';
+            }
+            document.getElementsByTagName("td")[x].style.backgroundColor = 'red';
+        }
+        setInterval(setBackground(), 1000);
+        setTimeout(clearInterval(s), 10000);
+    </script>
+    </head>
+
+    <body>
+        <table border="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+
+</html>

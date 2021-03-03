@@ -1,0 +1,97 @@
+CS3103: Operating Systems
+Semester B 2020-21
+Assignment 1
+Submitted by Utkarsh JAIN (55992915) and Aarnav GUPTA (55990960).
+==================================================================
+
+
+To run and compile the file, copy the code in main.cpp onto “nano” in the CityU Linux server, compile it using g++ [filepath] -o [filename] and then run using [filename].
+Further, use the given commands to obtain the necessary outputs.
+
+Commands:
+
+To run the process in background:
+bg [filepathname] [arguments separated by spaces] 
+
+To run the process in foreground:
+fg [filepathname] [arguments separated by spaces] 
+
+To list out all the running processes:
+list
+
+To stop the process:
+Ctrl+C
+
+To terminate the process:
+Ctrl+Z
+
+To continue the stopped process:
+cont [process ID of the stopped process]
+
+To exit/ terminate all processes:
+exit
+
+
+
+Test outputs:
+
+sh >fg ./test Hello 2 5
+Hello
+Hello
+Hello
+Hello
+Hello
+Process 4133248 completed
+
+sh >bg ./test Hi 20 1
+sh >bg ./test Bye 15 1
+
+sh >list
+4133667: running ./test Hi 20 1
+4133669: running ./test Bye 15 1
+
+sh >fg Hi
+Process 4133667 completed
+./test Bye
+Process 4133669 completed
+testing 25 2
+^ZProcess 4134062 stopped
+
+sh >list
+4134062: stopped ./test testing 25 2
+
+sh >cont 4134062
+testing
+^CProcess 4134062 terminated
+
+sh >
+Empty Input. Please try again.
+
+sh >bg
+sh >execvp failed for this process.
+
+Process 4134631 completed
+bg 
+Missing file information. Please try again.
+
+sh >thisisatest
+Wrong input. Please try again.
+
+sh >fg ./test Hi 10 1
+^ZProcess 4135573 stopped
+
+sh >fg ./test Bye 10 1
+^ZProcess 4135582 stopped
+
+sh >cont 4135573
+Hi
+Process 4135573 completed
+
+sh >bg ./test cs3103 30 1
+sh >bg ./test tsuen 25 1
+
+sh >exit
+Process 4135582 terminated
+Process 4136093 terminated
+Process 4136118 terminated
+uujain2@cs3103-01:~$

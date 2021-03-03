@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Showing!</title>
+    <link rel="stylesheet" href="../default.css" type="text/css" media="all">
+    <link rel="stylesheet" href="now_showing.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../theme.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../margin.css" type="text/css" media="all">
+    <link href='http://fonts.googleapis.com/css?family=Economica:700' rel='stylesheet' type='text/css'>
+    <script src="http://courses.cs.cityu.edu.hk/cs2204/cw3/cinemas.js"></script>
+    <script src="../JavaScript/movies.js"></script>
+    <script>
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="logotable">
+            <img src="../Images/logo.png" alt="NAV logo" class="logo">
+            <p class="title">At NAV, <span class="orange">you don't watch a movie;</span> you experience it!</p>
+        </div>
+        <div class="menutable">
+            <a href="../Home/index.html">Home</a>
+            <a class="active" href="../now_showing/now_showing.html">Now Showing</a>
+            <a href="../Ticket/Ticket.html">Ticket</a>
+        </div>
+    </header>
+    <div class="main">
+        <h3>LOCATIONS WE ARE AVAILABLE AT</h3>
+        <div id="location"></div>
+    </div>
+    <br><br><br>
+    <form name="CinemaPlaces"></form>
+    <h2><label for="CinemaLocations">Select Cinema Location: </label></h2>
+    <select id="CinemasLocations" required onchange="cinemachosen()"></select>
+    <script>
+        let cinemas = getCinemas();
+        for (let i = 0; i < cinemas.length; i++) {
+            document.getElementById("CinemasLocations").innerHTML += '<option value="' + i + '">' + cinemas[i].branchName + '</option>';
+        }
+        for (let i = 0; i < cinemas.length; i++) {
+            document.getElementById("location").innerHTML += '<div class="hvrbox"><img src="../Images/Map/Logix.png" alt="Map" class="hvrbox-layer_bottom"><div class="hvrbox-layer_top"><div class="hvrbox-text">' + cinemas[i].branchName + '</div></div></div>';
+        }
+        for (let i = 0; i < cinemas.length; i++) {
+            document.getElementById("location").innerHTML += '<p>' + cinemas[i].branchName + '</p>';
+        }
+    </script>
+    <div class="timings">
+        <h2>Show Timings</h2>
+        <div>
+            <div class="moviedetails" id="timings"></div>
+        </div>
+    </div>
+    <script>
+        let movieList = getMovies();
+
+        function movieupdate(x) {
+            document.getElementById("timings").innerHTML = '';
+            for (let id = 0; id < cinemas[x].movies.length; id++) {
+                document.getElementById("timings").innerHTML += '<h3>' + movieList[cinemas[x].movies[id].id - 1].name + '</h3>' +
+                    '<div><img src="' + movieList[cinemas[x].movies[id].id - 1].thumbnail + '" alt="' + movieList[cinemas[x].movies[id].id - 1].name + 'Thumbnail" class="thumbnail"></div>' +
+                    '<div class="form"><form action="../Ticket/Ticket.html" method="GET" id="datetimeform"><label for="datetime">Choose Date and Time:</label><select name="' + movieList[cinemas[x].movies[id].id - 1].name + '" id="datetime' + cinemas[x].movies[id].id + '"></select><br><button onclick="submit">Buy Tickets!</button></form></div>';
+                for (let s = 0; s < cinemas[x].movies[id].shows.length; s++) {
+                    document.getElementById("datetime" + cinemas[x].movies[id].id).innerHTML += '<option value="' + cinemas[x].movies[id].shows[s].index + '">' + cinemas[x].movies[id].shows[s].datetime + '</option>'
+                }
+            }
+        }
+
+        function submitkeliye() {
+            alert(5);
+            document.forms["datetimeform"].submit();
+        }
+
+        function cinemachosen() {
+            x = document.getElementById("CinemasLocations").selectedIndex;
+            movieupdate(x);
+        }
+        movieupdate(0);
+    </script>
+    <footer>
+        <p class="foot_link">
+            <a href="../Home/index.html">Home</a> | <a href="../Other/Design.html">Design</a> | <a href="../Other/contact-us.html">Contact Us</a>
+        </p>
+        <p>&copy; Resources and Content belongs to corresponding copyright owners - fair use of educational purpose.</p>
+        <p>Submitted by Aarnav GUPTA (55990960)</p>
+    </footer>
+</body>
+
+</html>

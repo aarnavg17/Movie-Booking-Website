@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Tickets!</title>
+    <link rel="stylesheet" href="../default.css" type="text/css" media="all">
+    <link rel="stylesheet" href="../margin.css" type="text/css" media="all">
+    <link href='http://fonts.googleapis.com/css?family=Economica:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="ticket.css" type="text/css" media="all">
+    <script src="http://courses.cs.cityu.edu.hk/cs2204/cw3/cinemas.js"></script>
+    <script src="../JavaScript/movies.js"></script>
+    <script>
+        var moviename, showindex;
+        var url = document.location.href;
+        var inforec = url.split('?')[1];
+        moviename = inforec.split('=')[0];
+        showindex = inforec.split('=')[1];
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="logotable">
+            <img src="../Images/logo.png" alt="NAV logo" class="logo">
+            <p class="title">At NAV, <span class="orange">you don't watch a movie;</span> you experience it!</p>
+        </div>
+        <div class="menutable">
+            <a href="../Home/index.html">Home</a>
+            <a href="../now_showing/now_showing.html">Now Showing</a>
+            <a class="active" href="../Ticket/Ticket.html">Ticket</a>
+        </div>
+    </header>
+    <div class="moviedetails" id="buyingthis"></div>
+    <script>
+        movieList = getMovies();
+        cinemaList = getCinemas();
+        var fml;
+        document.getElementById("buyingthis").innerHTML = '<h3>' + moviename + '</h3>' + '<div>';
+        for (let ml = 0; ml < movieList.length; ml++) {
+            if (movieList[ml].name == moviename) {
+                fml = ml;
+                document.getElementById("buyingthis").innerHTML += '<div><img src="' + movieList[ml].thumbnail + '" class="thumbnail"></div>';
+                break;
+            }
+        }
+        var fa, fb, fc;
+        for (let a = 0; a < cinemaList.length; a++) {
+            for (let b = 0; b < cinemaList[a].movies.length; b++) {
+                for (let c = 0; c < cinemaList[a].movies[b].shows.length; c++) {
+                    if (cinemaList[a].movies[b].shows[c].index == showindex) {
+                        document.getElementById("buyingthis").innerHTML += '<div><p><span class="info">Location:</span> ' + cinemaList[a].branchName +
+                            '<br><span class="info">Time:</span> ' + cinemaList[a].movies[b].shows[c].datetime +
+                            '<br></p></div>';
+                        fa = a;
+                        fb = b;
+                        fc = c;
+                    }
+                }
+            }
+        }
+        document.getElementById("buyingthis").innerHTML += '</div>';
+    </script>
+    <div class="seating">
+        <br>
+        <h5>Choose Seats:</h5>
+        <table>
+            <tr>
+                <td rowspan="10">4DX Seats</td>
+                <td rowspan="10">&#8377; 550</td>
+                <td rowspan="10">&nbsp;&nbsp;&nbsp;</td>
+                <td>A</td>
+                <td rowspan="10">&nbsp;&nbsp;&nbsp;</td>
+                <td class="highlight" onclick="colorchange(this)">A1</td>
+                <td class="highlight" onclick="colorchange(this)">A2</td>
+                <td class="highlight" onclick="colorchange(this)">A3</td>
+                <td class="highlight" onclick="colorchange(this)">A4</td>
+                <td rowspan="9">&nbsp;&nbsp;&nbsp;</td>
+                <td class="highlight" onclick="colorchange(this)">A5</td>
+                <td class="highlight" onclick="colorchange(this)">A6</td>
+                <td class="highlight" onclick="colorchange(this)">A7</td>
+                <td class="highlight" onclick="colorchange(this)">A8</td>
+                <td rowspan="9">&nbsp;&nbsp;&nbsp;</td>
+                <td class="highlight" onclick="colorchange(this)">A9</td>
+                <td class="highlight" onclick="colorchange(this)">A10</td>
+                <td class="highlight" onclick="colorchange(this)">A11</td>
+                <td class="highlight" onclick="colorchange(this)">A12</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td class="highlight" onclick="colorchange(this)">B1</td>
+                <td class="highlight" onclick="colorchange(this)">B2</td>
+                <td class="highlight" onclick="colorchange(this)">B3</td>
+                <td class="highlight" onclick="colorchange(this)">B4</td>
+                <td class="highlight" onclick="colorchange(this)">B5</td>
+                <td class="highlight" onclick="colorchange(this)">B6</td>
+                <td class="highlight" onclick="colorchange(this)">B7</td>
+                <td class="highlight" onclick="colorchange(this)">B8</td>
+                <td class="highlight" onclick="colorchange(this)">B9</td>
+                <td class="highlight" onclick="colorchange(this)">B10</td>
+                <td class="highlight" onclick="colorchange(this)">B11</td>
+                <td class="highlight" onclick="colorchange(this)">B12</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td class="highlight" onclick="colorchange(this)">C1</td>
+                <td class="highlight" onclick="colorchange(this)">C2</td>
+                <td class="highlight" onclick="colorchange(this)">C3</td>
+                <td class="highlight" onclick="colorchange(this)">C4</td>
+                <td class="highlight" onclick="colorchange(this)">C5</td>
+                <td class="highlight" onclick="colorchange(this)">C6</td>
+                <td class="highlight" onclick="colorchange(this)">C7</td>
+                <td class="highlight" onclick="colorchange(this)">C8</td>
+                <td class="highlight" onclick="colorchange(this)">C9</td>
+                <td class="highlight" onclick="colorchange(this)">C10</td>
+                <td class="highlight" onclick="colorchange(this)">C11</td>
+                <td class="highlight" onclick="colorchange(this)">C12</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td class="highlight" onclick="colorchange(this)">D1</td>
+                <td class="highlight" onclick="colorchange(this)">D2</td>
+                <td class="highlight" onclick="colorchange(this)">D3</td>
+                <td class="highlight" onclick="colorchange(this)">D4</td>
+                <td class="highlight" onclick="colorchange(this)">D5</td>
+                <td class="highlight" onclick="colorchange(this)">D6</td>
+                <td class="highlight" onclick="colorchange(this)">D7</td>
+                <td class="highlight" onclick="colorchange(this)">D8</td>
+                <td class="highlight" onclick="colorchange(this)">D9</td>
+                <td class="highlight" onclick="colorchange(this)">D10</td>
+                <td class="highlight" onclick="colorchange(this)">D11</td>
+                <td class="highlight" onclick="colorchange(this)">D12</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td class="highlight" onclick="colorchange(this)">E1</td>
+                <td class="highlight" onclick="colorchange(this)">E2</td>
+                <td class="highlight" onclick="colorchange(this)">E3</td>
+                <td class="highlight" onclick="colorchange(this)">E4</td>
+                <td class="highlight" onclick="colorchange(this)">E5</td>
+                <td class="highlight" onclick="colorchange(this)">E6</td>
+                <td class="highlight" onclick="colorchange(this)">E7</td>
+                <td class="highlight" onclick="colorchange(this)">E8</td>
+                <td class="highlight" onclick="colorchange(this)">E9</td>
+                <td class="highlight" onclick="colorchange(this)">E10</td>
+                <td class="highlight" onclick="colorchange(this)">E11</td>
+                <td class="highlight" onclick="colorchange(this)">E12</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td class="highlight" onclick="colorchange(this)">F1</td>
+                <td class="highlight" onclick="colorchange(this)">F2</td>
+                <td class="highlight" onclick="colorchange(this)">F3</td>
+                <td class="highlight" onclick="colorchange(this)">F4</td>
+                <td class="highlight" onclick="colorchange(this)">F5</td>
+                <td class="highlight" onclick="colorchange(this)">F6</td>
+                <td class="highlight" onclick="colorchange(this)">F7</td>
+                <td class="highlight" onclick="colorchange(this)">F8</td>
+                <td class="highlight" onclick="colorchange(this)">F9</td>
+                <td class="highlight" onclick="colorchange(this)">F10</td>
+                <td class="highlight" onclick="colorchange(this)">F11</td>
+                <td class="highlight" onclick="colorchange(this)">F12</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td class="highlight" onclick="colorchange(this)">G1</td>
+                <td class="highlight" onclick="colorchange(this)">G2</td>
+                <td class="highlight" onclick="colorchange(this)">G3</td>
+                <td class="highlight" onclick="colorchange(this)">G4</td>
+                <td class="highlight" onclick="colorchange(this)">G5</td>
+                <td class="highlight" onclick="colorchange(this)">G6</td>
+                <td class="highlight" onclick="colorchange(this)">G7</td>
+                <td class="highlight" onclick="colorchange(this)">G8</td>
+                <td class="highlight" onclick="colorchange(this)">G9</td>
+                <td class="highlight" onclick="colorchange(this)">G10</td>
+                <td class="highlight" onclick="colorchange(this)">G11</td>
+                <td class="highlight" onclick="colorchange(this)">G12</td>
+            </tr>
+            <tr>
+                <td>H</td>
+                <td class="highlight" onclick="colorchange(this)">H1</td>
+                <td class="highlight" onclick="colorchange(this)">H2</td>
+                <td class="highlight" onclick="colorchange(this)">H3</td>
+                <td class="highlight" onclick="colorchange(this)">H4</td>
+                <td class="highlight" onclick="colorchange(this)">H5</td>
+                <td class="highlight" onclick="colorchange(this)">H6</td>
+                <td class="highlight" onclick="colorchange(this)">H7</td>
+                <td class="highlight" onclick="colorchange(this)">H8</td>
+                <td class="highlight" onclick="colorchange(this)">H9</td>
+                <td class="highlight" onclick="colorchange(this)">H10</td>
+                <td class="highlight" onclick="colorchange(this)">H11</td>
+                <td class="highlight" onclick="colorchange(this)">H12</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;&nbsp;</td>
+                <th colspan="14" class="screen">SCREEN</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+    </script>
+    <br>
+    <form action="Print/print.html">
+        <fieldset id="seatbookingform"></fieldset>
+    </form>
+    <script>
+        function form(seatselected) {
+            document.getElementById("seatbookingform").innerHTML = '<legend>Seats Chosen</legend><input id="Seats" type="text" name="' + fa + ',' + fb + ',' + fc + ',' + moviename + '" value="' + seatselected + '" required><button type="submit">Confirm Tickets!</button>';
+        }
+
+        var seatselected = '';
+
+        function colorchange(element) {
+            element.style.background = "#ff914d";
+            element.style.color = "white";
+            seatselected += element.innerHTML;
+            seatselected += ',';
+            form(seatselected);
+        }
+    </script>
+    <footer>
+        <p class="foot_link">
+            <a href="../Home/index.html">Home</a> | <a href="../Other/Design.html">Design</a> | <a href="../Other/contact-us.html">Contact Us</a>
+        </p>
+        <p>&copy; Resources and Content belongs to corresponding copyright owners - fair use of educational purpose.</p>
+        <p>Submitted by Aarnav GUPTA (55990960)</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test cw3 data</title>
+    <script src="JavaScript/cinemas.js"></script>
+    <script src="JavaScript/movies.js"></script>
+    <script>
+        function getMovieName(movieArray, id) {
+            for (let i = 0; i < movieArray.length; i++) {
+                if (movieArray[i].id == id) return movieArray[i].name;
+            }
+            return undefined;
+        }
+
+        //movies is an array of objects each containing info about a movie
+        let movies = getMovies();
+        var NowMovies = new Array();
+        var UpMovies = new Array();
+        for (let i = 0; i < movies.length; i++) {
+            if (movies[i].type == "now") {
+                NowMovies.push(movies[i]);
+                console.log(movies[i]);
+            } else if (movies[i].type == "upcoming") {
+                UpMovies.push(movies[i]);
+            }
+        }
+        for (let i = 0; i < NowMovies.length; i++) {
+            document.write(NowMovies[i].name);
+            console.log(NowMovies[i]);
+        }
+        var videos = new Array();
+        for (let i = 0; i < NowMovies.length; i++) {
+            videos.push(NowMovies[i].src);
+        }
+        for (let i = 0; i < NowMovies.length; i++) {
+            videos.push(NowMovies[i].src);
+        }
+        var number_of_videos = videos.length;
+        //cinemas is an array of objects of cinema
+        //  each cinema object contains branch name and an array of objects of movies now showing
+        //  each movie object contains the movie id and an array of objects of shows
+        //  each show object contains the show index, date time and house no.
+        let cinemas = getCinemas();
+        for (let i = 0; i < cinemas.length; i++) {
+            console.log(cinemas[i].branchName + "\n");
+            for (let j = 0; j < cinemas[i].movies.length; j++) {
+                console.log("  movie id " + cinemas[i].movies[j].id + "\n");
+                console.log("  movie name " + getMovieName(movies, cinemas[i].movies[j].id));
+                for (let k = 0; k < cinemas[i].movies[j].shows.length; k++) {
+                    console.log("    index " + cinemas[i].movies[j].shows[k].index + "\n");
+                    console.log("    datetime " + cinemas[i].movies[j].shows[k].datetime + "\n");
+                    console.log("    house " + cinemas[i].movies[j].shows[k].house + "\n\n");
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

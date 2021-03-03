@@ -1,0 +1,27 @@
+.seating {
+    text-align: center;
+    font-family: 'Economica';
+    color: #004aad;
+}
+
+.seating h5 {
+    font-family: 'Economica';
+    font-size: 22px;
+    text-align: left;
+}
+
+.highlight:hover {
+    background-color: #ff914d;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.screen {
+    background-color: #004aad;
+    color: #ffffff;
+    font-family: 'Economica';
+}
+
+.screen td {
+    padding-left: 5%;
+}
