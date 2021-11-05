@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e34e98cb-362a-493d-9c1b-13a6bbaf3efc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdAssignProject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdCreateProject.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdCreateProjectExtension.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdGiveAssignmentSuggestions.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdHire.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdJoinTeam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdListAllEmployees.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdListAllProjectStaff.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdListAllProjects.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdListAllStaffParticipation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdListAllTeamProjects.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdListAllTeams.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdMarkComplete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdSetUpTeam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CmdStartNewDay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/CurrentDay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Day.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmployeeBelongsToTeam.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmployeeNameExists.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmployeeNotFound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmptyFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmptyRedoStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmptyStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExEmptyUndoStack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExInstanceOfSingleton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExInsufficientArguments.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExProjectAlreadyAssigned.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExProjectAlreadyCompleted.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExProjectNotAssigned.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExProjectNotFound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExTeamNameExists.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExTeamNotFound.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ExWrongCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Project.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ProjectAssignment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/ProjectExtension.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/RecordedCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Assignment/Team.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,5 +106,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
